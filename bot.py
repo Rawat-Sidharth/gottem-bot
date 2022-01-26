@@ -13,7 +13,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith('!ligma'):
-        await message.channel.send('ligma balls! GOTTEM')
+    else:
+        content = message.content
+        if content.startsWith('!ligma'):
+            await message.channel.send('ligma balls! GOTTEM')
+        elif content.startsWith('!sugma'):
+            await message.channel.send('sugma dick! GOTTEM')
+
 
 client.run(os.getenv('TOKEN'))
