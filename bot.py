@@ -15,9 +15,9 @@ async def on_message(message):
         return
     else:
         content = message.content
-        if content.startsWith('!ligma'):
+        if content.startswith('!ligma'):
             await message.channel.send('ligma balls! GOTTEM')
-        elif content.startsWith('!sugma'):
+        elif content.startswith('!sugma'):
             await message.channel.send('sugma dick! GOTTEM')
 
 
