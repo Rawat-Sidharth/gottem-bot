@@ -11,12 +11,15 @@ struct Handler;
 #[async_trait]
 impl EventHandler for Handler {
     async fn message(&self, ctx: Context, msg: Message) {
-        if msg.content.starts_with("!ligma") {
+        if msg.author.bot {
+            return;
+        }
+        if msg.content.starts_with("ligma") {
             if let Err(why) = msg.channel_id.say(&ctx.http, "ligma balls! GOTTEM").await {
                 println!("Error sending message: {:?}", why);
             }
         }
-        else if msg.content.starts_with("!sugma") {
+        else if msg.content.starts_with("sugma") {
             if let Err(why) = msg.channel_id.say(&ctx.http, "sugma dick! GOTTEM").await {
                 println!("Error sending message: {:?}", why);
             }
